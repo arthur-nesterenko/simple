@@ -1,0 +1,9 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+languages
+upgrade
+themes/HaiConference/dist
+themes/HaiConference/bower_components
+themes/HaiConference/node_modules
+themes/HaiConference/npm-debug.log
+themes/HaiConference/vendor

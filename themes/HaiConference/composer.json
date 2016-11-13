@@ -1,0 +1,41 @@
+{
+  "name": "roots/sage",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "description": "The best WordPress starter theme with a modern front-end development workflow. Based on HTML5 Boilerplate, gulp, Bower, and Bootstrap.",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    {
+      "name": "Ben Word",
+      "email": "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    },
+    {
+      "name": "Scott Walkinshaw",
+      "email": "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/sage/issues",
+    "forum": "https://discourse.roots.io/"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "composer/installers": "~1.0",
+    "intervention/image": "~2.1",
+    "knplabs/knp-snappy": "^0.4.1",
+    "h4cc/wkhtmltopdf-i386": "0.12.x",
+    "h4cc/wkhtmltoimage-i386": "0.12.x",
+    "querypath/QueryPath": ">=3.0.0",
+    "maxmind-db/reader": "~1.0"
+  }
+
+  //  "autoload": {
+  //   "psr-4": {
+  //     "HaiConference": "src/"
+  //   }
+}
