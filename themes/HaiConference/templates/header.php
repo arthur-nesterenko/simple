@@ -1,7 +1,7 @@
-<header class="banner">
-  <div class="container">
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-    <nav class="nav-primary">
+<header >
+
+ 
+<div class="uk-container uk-container-center">
       <?php
       if (has_nav_menu('primary_navigation')) :
           wp_nav_menu( array(
@@ -16,6 +16,5 @@
 
       endif;
       ?>
-    </nav>
-  </div>
+</div>
 </header>

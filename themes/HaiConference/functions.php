@@ -31,3 +31,4 @@ unset($file, $filepath);
 
 
 include('functions/nav_walker.php'); 
+include('functions/function_filter.php'); 

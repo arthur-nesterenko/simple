@@ -2,20 +2,27 @@
   "dependencies": {
     "main.js": {
       "files": [
-        "scripts/main.js"
+         "scripts/main.js",
+         "scripts/**/*"
       ],
       "main": true
+    },
+      "components.js": {
+        "files": [
+          "../bower_components/uikit/js/components/form-select.js",
+          "../bower_components/uikit/js/components/form-password.js",
+          "../bower_components/uikit/js/components/form-advanced.js",
+          "../bower_components/uikit/js/components/lightbox.js",
+          "../bower_components/uikit/js/components/notify.js",
+           "../bower_components/uikit/js/components/search.js",
+           "../bower_components/uikit/js/components/tooltip.js"
+        ]
     },
     "main.css": {
       "files": [
         "styles/main.scss"
       ],
       "main": true
-    },
-    "customizer.js": {
-      "files": [
-        "scripts/customizer.js"
-      ]
     },
     "jquery.js": {
       "bower": ["jquery"]

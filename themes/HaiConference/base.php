@@ -34,6 +34,10 @@ use Roots\Sage\Wrapper;
       do_action('get_footer');
       get_template_part('templates/footer');
       wp_footer();
+
+        include('templates/modal-login.php');
     ?>
+
+  
   </body>
 </html>

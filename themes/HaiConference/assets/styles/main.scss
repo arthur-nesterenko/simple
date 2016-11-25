@@ -1,8 +1,14 @@
-@import "common/variables";
 @import "../../bower_components/uikit/scss/uikit-mixins.scss";
-@import "../../bower_components/uikit/scss/uikit.scss";
-
-
+@import "common/variables";
+@import "../../bower_components/uikit/scss/uikit";
+@import "../../bower_components/uikit/scss/components/form-advanced";
+@import "../../bower_components/uikit/scss/components/form-file";
+@import "../../bower_components/uikit/scss/components/form-password";
+@import "../../bower_components/uikit/scss/components/form-select";
+@import "../../bower_components/uikit/scss/components/notify";
+@import "../../bower_components/uikit/scss/components/search";
+@import "../../bower_components/uikit/scss/components/tooltip";
+// @import "../../bower_components/uikit/scss/components/form-advanced";
 @import "common/global";
 /*@import "components/buttons";*/
 /*@import "components/comments";*/
