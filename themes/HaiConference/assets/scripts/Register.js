@@ -1,15 +1,22 @@
 var Register = (function($,config)
 {
+    /**
+     * for button validate
+    */
+    config.notValid = false;
+
+
     return{
         init: init
     };
     
     
+  
+
     function init() {
         actionRegister();
         actionLogin();
         validateRegister();
-        console.log('rep');
     }
     
     function actionRegister() {
@@ -17,6 +24,16 @@ var Register = (function($,config)
         $('#registerSubmit').on('click',function(e)
         {
             e.preventDefault();
+          
+           $('#regiserForm [required]').trigger('blur');
+            if (config.notValid)
+            {
+
+                $(this).prop('disabled','true');
+                 return false;
+            }
+            
+
             var userData = $('#regiserForm').serialize();
 
              $.post(config.ajax_register,userData,function(response)
@@ -33,6 +50,8 @@ var Register = (function($,config)
      */
     function onActionFocus($element) {
         $element.removeClass();
+         $('#registerSubmit').prop('disabled',false);
+          config.notValid = false;
     }
 
     /**
@@ -42,16 +61,24 @@ var Register = (function($,config)
    function onActionBlur($element)
     {
         var name  = $element.prop('name');
-
+        var danger = false;
+         config.notValid = false;
+        var info = {
+            timeout : 1500,
+            pos     : 'top-center'
+        }
         switch( name)
         {
             case 'username':
                 case 'lastname':
                     {
-                       if( $selector.val().length == 0 )
+                       if( $element.val().length == 0 )
                        {
                            $element.addClass(  'uk-form-danger' );
                            $element.prop('placeholder','Поле не может быть пустым ! ');
+                           info.status = 'danger';
+                           info.message = 'Поле не может быть пустым !';
+                           danger = true;
                        }
                        else
                            {
@@ -62,15 +89,19 @@ var Register = (function($,config)
             case 'user_role':{ console.log('Important field'); break;}
             case 'password':
                 {
-                    if( $selector.val().length == 0  )
+                    if( $element.val().length == 0  )
                     {
                         $element.addClass(  'uk-form-danger' );
                         $element.prop('placeholder','Поле не может быть пустым ! ');
+                        info.status = 'danger';
+                        info.message = 'Поле не может быть пустым !';
+                        danger = true;
                     }
-                    else if(  $selector.val().length <= 6 )
+                    else if(  $element.val().length <= 6 )
                     {
                         $element.addClass(  'uk-form-danger' );
-                        $element.prop('placeholder','пароль должен быть более 6 символов! ');
+                        info.message = 'Пароль должен быть более 6 символов! ';
+                        danger = true;
                     }
                     else
                         {
@@ -80,15 +111,42 @@ var Register = (function($,config)
                 }
             case 'repeat_password':
             {
-                if( $element.val() !=  $('input[name="repeat_password"]').val() )
+                if( $element.val() !=  $('input[name="password"]').val() )
                 {
-
+                        $element.addClass(  'uk-form-danger' );
+                        info.status = 'danger';
+                        info.message = 'Пароль не совпадают';
+                        danger = true;
                 }
                 break
+            }
+            case 'email':
+            {
+                if( !validateEmail($element.val()) )
+                {
+                        $element.addClass(  'uk-form-danger' );
+                        info.status = 'danger';
+                        info.message = 'Не правильный Email ';
+                        danger = true;
+                }
+                else
+                {
+                    $element.addClass(  'uk-form-succes' );
+                }
+                break;
             }
 
 
         }
+
+        if(danger)
+        {
+             config.notValid =  true;
+             UIkit.notify(info);
+        }
+           
+
+
 
     }
     function validateRegister()
@@ -109,5 +167,13 @@ var Register = (function($,config)
     {
         console.log('action for login ')
     }
+
+
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+
     
 }(jQuery,CONFIG))

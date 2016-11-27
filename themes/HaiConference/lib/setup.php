@@ -47,6 +47,10 @@ function setup() {
   // Use main stylesheet for visual editor
   // To add custom styles edit /assets/styles/layouts/_tinymce.scss
 //  add_editor_style(Assets\asset_path('styles/main.css'));
+
+ // register extract rolese for users 
+  add_roles();
+
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
@@ -95,10 +99,6 @@ add_action('init', __NAMESPACE__ .'\\register_custom_new_post_type');
 	) );
 
   }
-
-
- //register_custom_new_post_type();
-
 
 
 
@@ -150,12 +150,10 @@ function display_sidebar() {
 function assets() {
   wp_enqueue_style('hai/css', Assets\asset_path('styles/main.css'), false, null);
 
-//  if (is_single() && comments_open() && get_option('thread_comments')) {
-//    wp_enqueue_script('comment-reply');
-//  }
+
 
   wp_enqueue_script('uikit', Assets\asset_path('scripts/uikit.js'), ['jquery'], null, true);
-    wp_enqueue_script('uikit', Assets\asset_path('scripts/components.js'), ['jquery'], null, true);
+    wp_enqueue_script('components', Assets\asset_path('scripts/components.js'), ['jquery'], null, true);
      wp_enqueue_script('main', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
  
 }
@@ -163,5 +161,42 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
 
 
+function add_roles()
+{
+  // Add a custom user role
+  
+$capContributor = array(
+  
+'read' => true, // true allows this capability
+'edit_posts' => true, // Allows user to edit their own posts
+'edit_pages' => false, // Allows user to edit pages
+'edit_others_posts' => false, // Allows user to edit others posts not just their own
+'create_posts' => true, // Allows user to create new posts
+'manage_categories' => false, // Allows user to manage post categories
+'publish_posts' => true, // Allows the user to publish, otherwise posts stays in draft mode
+'edit_themes' => false, // false denies this capability. User can’t edit your theme
+'install_plugins' => false, // User cant add new plugins
+'update_plugin' => false, // User can’t update any plugins
+'update_core' => false // user cant perform core updates
+);
+$capVisitor = array(
+  
+'read' => true, // true allows this capability
+'edit_posts' => false, // Allows user to edit their own posts
+'edit_pages' => false, // Allows user to edit pages
+'edit_others_posts' => false, // Allows user to edit others posts not just their own
+'create_posts' => false, // Allows user to create new posts
+'manage_categories' => false, // Allows user to manage post categories
+'publish_posts' => true, // Allows the user to publish, otherwise posts stays in draft mode
+'edit_themes' => false, // false denies this capability. User can’t edit your theme
+'install_plugins' => false, // User cant add new plugins
+'update_plugin' => false, // User can’t update any plugins
+'update_core' => false // user cant perform core updates
+);
 
+ add_role( 'contributor', __('Участник' ),$capVisitor);
+ add_role('visitor',__('Зритель'),$capVisitor);
 
+}
+
+// add_action('init', __NAMESPACE__ . '\\add_roles',101);
