@@ -30,6 +30,27 @@ foreach ($sage_includes as $file) {
 unset($file, $filepath);
 
 
+ function view($template, $data = array()) {
+		$file =  get_template_directory().'/templates/content-'.$template.'.php';  //get_template_directory() . $template;
+
+    // echo $file;
+    
+    if (file_exists($file)) {
+			extract($data);
+			ob_start();
+		    require $file;
+			  $output = ob_get_contents();
+			ob_end_clean();
+
+			echo  $output;
+		} else {
+			trigger_error('Error: Could not load template ' . $file . '!');
+			exit();
+		}
+	}
+
+
+
 include('functions/nav_walker.php'); 
 include('functions/function_filter.php');
 include('functions/function_ajax.php');

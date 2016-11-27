@@ -15,18 +15,27 @@
             </div>
 
         </div>
-        <div class="uk-form-row">
+        <!--<div class="uk-form-row">
             <label for="" class="uk-form-label">Отчество</label>
             <div class="uk-form-controls">
                 <input type="text" name="surname" placeholder="Отчество">
             </div>
+        </div>-->
+        <div class="uk-form-row">
+            <label for="" class="uk-form-label">E-mail</label>
+            <div class="uk-form-controls">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
         </div>
+
         <div class="uk-form-row">
             <label for="" class="uk-form-label">Выберете роль</label>
             <div class="uk-form-controls">
                 <div class="uk-form-select uk-button" data-uk-form-select>
-                    <span>Роль</span>
+                    <span></span>
+                     <i class="uk-icon-caret-down"></i>
                     <select name="user_role" required>
+                        <option value="" selected>Выберете роль</option>
                         <option value="contributor">Участник</option>
                         <option value="visitor">Зритель</option>
                     </select>
@@ -38,7 +47,9 @@
             <div class="uk-form-controls">
                 <div class="uk-form-password">
                     <input type="password" name="password" required>
-                    <a href="" class="uk-form-password-toggle" data-uk-form-password="{lblShow:'<i class='uk-icon-eye'></i>', lblHide:'<i class='uk-icon-eye-slash'></i>'}" > <i class='uk-icon-eye'></i> </a>
+                    <a href="" class="uk-form-password-toggle" data-uk-form-password='{lblShow: "<i class=\"uk-icon-eye\"></i>", lblHide: "<i class=\"uk-icon-eye-slash\"></i>"}'>
+                                <i class="uk-icon-eye"></i>
+                            </a>
                 </div>
                 <p class="uk-form-help-block">пароль должен быть более 6 символов !</p>
             </div>
@@ -48,7 +59,9 @@
             <div class="uk-form-controls">
                 <div class="uk-form-password">
                     <input type="password" name="repeat_password" required>
-                    <a href="" class="uk-form-password-toggle" data-uk-form-password="{lblShow:'<i class='uk-icon-eye'></i>', lblHide:'<i class='uk-icon-eye-slash'></i>'}" > </a>
+                      <a href="" class="uk-form-password-toggle" data-uk-form-password='{lblShow: "<i class=\"uk-icon-eye\"></i>", lblHide: "<i class=\"uk-icon-eye-slash\"></i>"}'>
+                                <i class="uk-icon-eye"></i>
+                            </a>
                 </div>
             </div>
         </div>

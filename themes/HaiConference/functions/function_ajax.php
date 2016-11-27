@@ -3,21 +3,32 @@
 
 function registerUser()
 {
-  $json = array();
-   $creds = array(
-       'username' => $_POST['username'],
-       'lastname' => $_POST['lastname'],
-       'surname' => $_POST['surname'],
-        'user_role' => $_POST['user_role'],
-       'password' => $_POST['password'],
-       'repeat_password' => $_POST['repeat_password']
-       );
-//    $creds['user_login'] = 'Leonid';
-//    $creds['user_password'] = 'password';
-//    $creds['remember'] = true;
 
-    $json['creds'] = $creds;
-    $json['teste'] = 'работаем дальше';
+    $json = array();
+
+$userdata = array(
+	'user_pass'       => $_POST['password'], // обязательно
+	'user_login'      => $_POST['email'], // обязательно
+	'user_email'      => $_POST['email'],
+	'display_name'    => $_POST['username'],
+	'first_name'      => $_POST['username'],
+	'last_name'       => $_POST['lastname'],
+	'user_registered' => date('d F Y'), 
+	'role'            => $_POST['user_role'],
+    'show_admin_bar_front' => false // (строка) роль пользователя
+);
+
+
+$user_id = wp_insert_user( $userdata ) ;
+
+	// возврат
+	if( ! is_wp_error( $user_id ) ) {
+		$json['success'] =  true;
+	} else {
+		$json['error'] = $user_id->get_error_message();
+	} 
+
+    
     exit( json_encode($json));
 }
 add_action('wp_ajax_registerUser', 'registerUser');
