@@ -26,7 +26,10 @@ class Nav_primary_menu extends Walker_Nav_Menu {
 	 * @param int    $depth  Depth of page. Used for padding.
 	 * @param array  $args   Not used.
 	 */
+
+
 	public function end_lvl( &$output, $depth = 0, $args = array() ) {
+
 		$indent = str_repeat( "\t", $depth );
 		$output .= "\n$indent</ul></div>";
 	}
@@ -50,7 +53,7 @@ class Nav_primary_menu extends Walker_Nav_Menu {
 			$class_names .= ' uk-parent';
 		$dropdown = '';
 		if ( $args->has_children && $depth == 0)
-			$dropdown .= ' data-uk-dropdown="{mode:\'click\'}"';
+			$dropdown .= ' data-uk-dropdown';
 		if ( in_array( 'current-menu-item', $classes ) || in_array('current-menu-parent', $classes))
 			$class_names .= ' uk-active';
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';

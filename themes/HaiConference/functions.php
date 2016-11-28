@@ -54,3 +54,4 @@ unset($file, $filepath);
 include('functions/nav_walker.php'); 
 include('functions/function_filter.php');
 include('functions/function_ajax.php');
+include('functions/widgets.php');

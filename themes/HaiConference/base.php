@@ -20,23 +20,26 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
      
     ?>
-    <div class="wrap" role="document">
-      
-        <main class="uk-container uk-conteiner-center">
+    <div class="wrap uk-container uk-container-center">
+     <?php if (Setup\display_sidebar()): ?>
+      <div class="uk-grid"></div>
+     <? endif?>
+        <main class="<?php echo  Setup\display_sidebar() ? 'uk-width-small-1-1 uk-width-medium-6-10 uk-width-large-7-10' : 'uk-width-1-1' ?>">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
+        
         <?php if (Setup\display_sidebar()) : ?>
-          <aside class="sidebar">
+          <aside class="uk-width-small-1-1 uk-width-medium-4-10 uk-width-large-3-10">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>
-    </div><!-- /.wrap -->
+  </div>
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');
         include('templates/modal-login.php');
         else:?>
-        <main>
+        <main class="wrap">
             <?php include Wrapper\template_path(); ?>
             </main>
         <?php endif;

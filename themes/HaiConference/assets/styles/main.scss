@@ -1,5 +1,6 @@
 @import "../../bower_components/uikit/scss/uikit-mixins.scss";
 @import "common/variables";
+@import "common/_my-variable";
 @import "../../bower_components/uikit/scss/uikit";
 @import "../../bower_components/uikit/scss/components/form-advanced";
 @import "../../bower_components/uikit/scss/components/form-file";
@@ -8,13 +9,9 @@
 @import "../../bower_components/uikit/scss/components/notify";
 @import "../../bower_components/uikit/scss/components/search";
 @import "../../bower_components/uikit/scss/components/tooltip";
+@import "../../bower_components/uikit/scss/components/search";
 // @import "../../bower_components/uikit/scss/components/form-advanced";
 @import "common/global";
-/*@import "components/buttons";*/
-/*@import "components/comments";*/
-/*@import "components/forms";*/
-/*@import "components/grid";*/
-/*@import "components/wp-classes";*/
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
