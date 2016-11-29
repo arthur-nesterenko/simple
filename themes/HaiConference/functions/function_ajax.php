@@ -21,7 +21,6 @@ $userdata = array(
 
 $user_id = wp_insert_user( $userdata ) ;
 
-	// возврат
 	if( ! is_wp_error( $user_id ) ) {
 		$json['success'] =  true;
 	} else {

@@ -39,6 +39,15 @@ var Register = (function($,config)
              $.post(config.ajax_register,userData,function(response)
              {
                 console.log( response );
+                 if( response.success )
+                     location.href  = config.link_userprofile;
+                 else
+                     UIkit.notify({
+                         message : response.error,
+                         status  : 'danger',
+                         timeout : 5000,
+                         pos     : 'top-center'
+                     });
              },'json');
         })
 

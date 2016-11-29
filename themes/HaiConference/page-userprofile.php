@@ -1,9 +1,15 @@
 <?php
-/*
-*/
+//if (is_user_logged_in())
+//    echo 'good';
+//else
+//{
+//    wp_redirect( home_url() );
+//    exit;
+//}
 
 global $current_user;
 
+print_r( $current_user );
 $user =  get_user_by( 'id', $current_user->ID );
 $data = array();
 

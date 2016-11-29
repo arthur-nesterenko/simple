@@ -1,12 +1,9 @@
 <?php
-
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
-
 ?>
-
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html>
   <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
     <!--[if IE]>
@@ -18,12 +15,13 @@ use Roots\Sage\Wrapper;
      if( !is_page('userprofile')):
       do_action('get_header');
       get_template_part('templates/header');
-     
     ?>
     <div class="wrap uk-container uk-container-center">
-     <?php if (Setup\display_sidebar()): ?>
-      <div class="uk-grid"></div>
-     <? endif?>
+        <?php if (Setup\display_sidebar())
+            echo '<div class="uk-grid"></div>';
+      ?>
+
+
         <main class="<?php echo  Setup\display_sidebar() ? 'uk-width-small-1-1 uk-width-medium-6-10 uk-width-large-7-10' : 'uk-width-1-1' ?>">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
@@ -32,6 +30,7 @@ use Roots\Sage\Wrapper;
           <aside class="uk-width-small-1-1 uk-width-medium-4-10 uk-width-large-3-10">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
+         </div>
         <?php endif; ?>
   </div>
     <?php
