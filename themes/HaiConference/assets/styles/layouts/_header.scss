@@ -1,16 +1,63 @@
-.logo {
-    width: 100%;
-}
-
-.header-info {
-    margin-top: 10px;
-
-    #menu-mainmenu {
-        background-color: #079cd2;
+header {
+    .logo {
+        width: 100%;
     }
 
-    span {
-        font-weight: 600;
-        font-size: 18px;
+    .header-info {
+        position: relative;
+
+        .meeting-date, .contact-phone {
+            margin-top: 7px;
+        }
+
+        #menu-mainmenu {
+            background-color: $main-color;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+
+            a {
+                color: #fff;
+                text-align: center;
+                
+                &:hover {
+                    background-color: $hover-color;
+                }
+            }
+
+            .uk-active, .uk-open {
+                a {
+                    background-color: $hover-color;
+                    color: #fff;
+                }
+            }
+
+            .uk-open {
+                
+                .uk-dropdown-navbar {
+                    background-color: $main-color;
+
+                    a {
+                        background-color: $main-color;
+
+                        &:hover {
+                            background-color: $hover-color;
+                        }
+                    }
+                }
+            }
+
+            .modal, .uk-parent {
+                a:focus {
+                    background-color: $hover-color;
+                }
+            }
+        }
+
+        span {
+            font-weight: 600;
+            font-size: 18px;
+        }
     }
 }
+    

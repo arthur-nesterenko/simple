@@ -9,6 +9,9 @@
         Register.init();
     })
 
+jQuery(document).ready(function () {
+    jQuery('#menu-mainmenu > li').addClass('uk-width-1-6');
+})
 
 
 })(jQuery); // Fully reference jQuery after this point.
