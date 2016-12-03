@@ -1,5 +1,6 @@
 .section {
     position: relative;
+    margin-bottom: 20px;
     
     .section-header {
         background-color: $main-color;
@@ -24,4 +25,14 @@
         -webkit-clip-path: polygon(100% 0,100% 100%,13% 100%,13% 21%,0 0);
     }
 
+}
+
+@media screen and (max-width:479px) {
+    .section {
+        
+        .section-header {
+            width: 82%;
+        }
+
+    }
 }
