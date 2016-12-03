@@ -36,9 +36,11 @@ header {
                 
                 .uk-dropdown-navbar {
                     background-color: $main-color;
+                    border: 1px solid $hover-color;
 
                     a {
                         background-color: $main-color;
+                        text-align: left;
 
                         &:hover {
                             background-color: $hover-color;

@@ -1,0 +1,27 @@
+.section {
+    position: relative;
+    
+    .section-header {
+        background-color: $main-color;
+        color: $white-color;
+        padding: 5px 20px 5px 50px;
+        position: absolute;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+        z-index: 1;
+
+        span {
+            font-size: 18px;
+        }
+
+        &:hover {
+            background-color: $hover-color;
+        }
+    }
+
+    .section-content {
+        background-color: $secondary-color;
+        padding: 65px 20px 10px 35px;
+        -webkit-clip-path: polygon(100% 0,100% 100%,13% 100%,13% 21%,0 0);
+    }
+
+}

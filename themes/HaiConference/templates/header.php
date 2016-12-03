@@ -8,7 +8,9 @@ $imgLogo =  get_template_directory_uri().'/assets/images/logo.png';
 <div class="uk-container uk-container-center uk-margin-top uk-margin-bottom">
   <div class="uk-grid">
     <div class="uk-width-small-1-1 uk-width-medium-3-10 uk-width-large-2-10">
-      <img src="<?php echo $imgLogo; ?>" alt="Logo" class="uk-img-preserve logo">
+      <a href="<?php echo get_home_url(); ?>">
+        <img src="<?php echo $imgLogo; ?>" alt="Logo" class="uk-img-preserve logo">
+      </a>
     </div>
     <div class="header-info uk-width-small-1-1 uk-width-medium-7-10 uk-width-large-8-10">
         <div class="meeting-date uk-width-small-1-1 uk-width-medium-5-6 uk-width-large-5-6 uk-text-right uk-push-1-10">

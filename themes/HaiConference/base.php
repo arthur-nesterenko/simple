@@ -17,9 +17,10 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
     <div class="wrap uk-container uk-container-center uk-width-1-1 uk-margin-top uk-margin-bottom">
-        <?php if (Setup\display_sidebar())
-            echo '<div class="uk-grid"></div>';
-      ?>
+      <div class="uk-grid">
+        <?php //if (Setup\display_sidebar())
+            //echo '<div class="uk-grid"></div>';
+        ?>
 
         <main class="<?php echo  Setup\display_sidebar() ? 'uk-width-small-1-1 uk-width-medium-6-10 uk-width-large-7-10' : 'uk-width-1-1' ?>">
           <?php include Wrapper\template_path(); ?>
@@ -31,7 +32,8 @@ use Roots\Sage\Wrapper;
           </aside><!-- /.sidebar -->
          </div>
         <?php endif; ?>
-  </div>
+      </div>
+    </div>
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');
