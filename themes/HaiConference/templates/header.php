@@ -33,6 +33,27 @@ $imgLogo =  get_template_directory_uri().'/assets/images/logo.png';
             );
             endif;
             ?>
+              <div class="mobile-menu uk-hidden-middle uk-hidden-large uk-text-right uk-width-small-1-1">
+                <button class="uk-button uk-icon-navicon uk-icon-large" data-uk-offcanvas="{target:'#menu', mode:'slide'}"></button>
+                <div id="menu" class="uk-offcanvas uk-text-center">
+                    <div class="uk-offcanvas-bar">
+                        <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+                        <?php
+                          if (has_nav_menu('primary_navigation')) :
+                              wp_nav_menu( array(
+                                'theme_location'    => 'primary_navigation',
+                                'depth'             => 2,
+                                'container'         => '',
+                                'menu_class'        => 'uk-navbar',
+                                'fallback_cb'       => 'basey_primary_menu::fallback',
+                                'walker'            => new Nav_primary_menu())
+                          );
+                          endif;
+                          ?>
+                        </ul>
+                    </div>
+                </div>
+              </div>
             </div>
           </div>
     </div>

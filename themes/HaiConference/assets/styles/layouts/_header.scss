@@ -60,6 +60,21 @@ header {
             font-weight: 600;
             font-size: 18px;
         }
+
+
+        .mobile-menu {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-right: 25px;
+
+            .uk-button {
+                padding: 15px;
+                border-radius: 5px;
+                background-color: $main-color;
+                color: $white-color;
+            }
+        }
     }
 }
     
