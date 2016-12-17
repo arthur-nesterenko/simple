@@ -3,6 +3,11 @@ header {
         width: 100%;
     }
 
+    span {
+        font-weight: 600;
+        font-size: 18px;
+    }
+
     .header-info {
         position: relative;
 
@@ -14,7 +19,7 @@ header {
             background-color: $main-color;
             position: absolute;
             bottom: 0px;
-            width: 100%;
+            width: 96%;
 
             a {
                 color: #fff;
@@ -55,26 +60,86 @@ header {
                 }
             }
         }
-
-        span {
-            font-weight: 600;
-            font-size: 18px;
+        
+        & > .uk-container {
+            padding-right: 0px;
         }
 
-
         .mobile-menu {
-            position: absolute;
+            position: relative;
             bottom: 0;
             width: 100%;
-            padding-right: 25px;
 
             .uk-button {
                 padding: 15px;
                 border-radius: 5px;
                 background-color: $main-color;
                 color: $white-color;
+                margin-left: 10px;
+            }
+        }
+
+
+    }
+
+
+
+    #left-menu {
+        .uk-nav-offcanvas {
+            ul {
+                background: #333;
+                
+                li {
+                    border-bottom: 1px solid rgba(0,0,0,.3);
+                    box-shadow: 0 1px 0 rgba(255,255,255,.05);
+                }
+                
+                a {
+                    color: $white-color;
+                    padding: 7px;
+                }
             }
         }
     }
+}
+
+@media (max-width: $screen-desktop) {
+        #menu-mainmenu {
+            position: relative !important;
+        }
+    
+        .uk-navbar-nav > li {
+            width: 33.333%;
+        }
+
+        .meeting-date, .contact-phone {
+            display: none;
+            margin-top: 0px !important;
+            
+            span {
+                font-size: 10px !important;
+            }
+        }
+}
+
+@media (min-width: $screen-desktop) and (max-width: $screen-lg-desktop) {
+        .meeting-date, .contact-phone {
+            margin-top: 0px !important;
+            
+            span {
+                font-size: 17px !important;
+            }
+        }
+}
+
+@media (max-width: $screen-phone) {
+        .logo-section {
+            width: 40%;
+        }
+
+        .header-info {
+            width: 60%;
+            padding-left: 0px;
+        }
 }
     

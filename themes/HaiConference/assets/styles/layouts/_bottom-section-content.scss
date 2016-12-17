@@ -27,11 +27,35 @@
 
 }
 
-@media screen and (max-width:479px) {
+@media (max-width: $screen-phone) {
     .section {
         
         .section-header {
             width: 82%;
+        }
+
+    }
+}
+
+// @media (min-width: $screen-tablet) and (max-width: $screen-desktop) {
+//     .section {
+        
+//         .section-header {
+//             min-width: 186px;
+//         }
+
+//         .section-content {
+//             min-width: 186px;
+//         }
+
+//     }
+// }
+
+@media (max-width: $screen-lg-desktop) {
+    .section {
+        
+        .section-content {
+            padding: 75px 20px 10px 35px;
         }
 
     }
